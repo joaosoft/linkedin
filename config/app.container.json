@@ -1,0 +1,19 @@
+{
+  "linkedin": {
+    "log": {
+      "level": "info"
+    },
+    "authorization": {
+      "id": "78zluljjwncoue",
+      "secret": "DgDeaG3Aa6RrlTd2"
+    },
+    "hosts": {
+      "api": "https://api.linkedin.com/v2",
+    }
+  },
+  "manager": {
+    "log": {
+      "level": "info"
+    }
+  }
+}
