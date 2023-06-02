@@ -73,7 +73,7 @@ func (f *File) Upload(path string, file []byte) (*uploadFileResponse, error) {
 	}
 
 	headers := manager.Headers{
-		"Authorization":   {fmt.Sprintf("%s %s", f.config.Authorization.Access, f.config.Authorization.Token)},
+		"Authorization":    {fmt.Sprintf("%s %s", f.config.Authorization.Id, f.config.Authorization.Secret)},
 		"Linkedin-API-Arg": {string(bodyArgs)},
 	}
 
@@ -82,7 +82,7 @@ func (f *File) Upload(path string, file []byte) (*uploadFileResponse, error) {
 		err = f.logger.Error("errors marshal arguments").ToError()
 		return nil, err
 	}
-	if status, response, err := f.client.Request(http.MethodPost, f.config.Hosts.Content, "/files/upload", string(web.ContentTypeApplicationOctetStream), headers, file); err != nil {
+	if status, response, err := f.client.Request(http.MethodPost, f.config.Hosts.Api, "/files/upload", string(web.ContentTypeApplicationOctetStream), headers, file); err != nil {
 		f.logger.WithField("response", response).Errorf("error uploading file to %s", path)
 		return nil, err
 	} else if status != http.StatusOK {
@@ -99,8 +99,6 @@ func (f *File) Upload(path string, file []byte) (*uploadFileResponse, error) {
 		}
 		return dropboxResponse, nil
 	}
-
-	return nil, nil
 }
 
 type downloadFileRequest struct {
@@ -120,11 +118,11 @@ func (f *File) Download(path string) ([]byte, error) {
 	}
 
 	headers := manager.Headers{
-		"Authorization":   {fmt.Sprintf("%s %s", f.config.Authorization.Access, f.config.Authorization.Token)},
+		"Authorization":    {fmt.Sprintf("%s %s", f.config.Authorization.Id, f.config.Authorization.Secret)},
 		"Linkedin-API-Arg": {string(bodyArgs)},
 	}
 
-	if status, response, err := f.client.Request(http.MethodPost, f.config.Hosts.Content, "/files/download", string(web.ContentTypeApplicationOctetStream), headers, []byte("")); err != nil {
+	if status, response, err := f.client.Request(http.MethodPost, f.config.Hosts.Api, "/files/download", string(web.ContentTypeApplicationOctetStream), headers, []byte("")); err != nil {
 		err = f.logger.WithField("response", response).Error("errors downloading File").ToError()
 		return nil, err
 	} else if status != http.StatusOK {
@@ -136,8 +134,6 @@ func (f *File) Download(path string) ([]byte, error) {
 	} else {
 		return response, nil
 	}
-
-	return nil, nil
 }
 
 type deleteFileRequest struct {
@@ -185,7 +181,7 @@ func (f *File) Delete(path string) (*deleteFileResponse, error) {
 	}
 
 	headers := manager.Headers{
-		"Authorization": {fmt.Sprintf("%s %s", f.config.Authorization.Access, f.config.Authorization.Token)},
+		"Authorization": {fmt.Sprintf("%s %s", f.config.Authorization.Id, f.config.Authorization.Secret)},
 	}
 
 	dropboxResponse := &deleteFileResponse{}
@@ -205,6 +201,4 @@ func (f *File) Delete(path string) (*deleteFileResponse, error) {
 		}
 		return dropboxResponse, nil
 	}
-
-	return nil, nil
 }
