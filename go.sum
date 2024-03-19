@@ -134,8 +134,6 @@ github.com/joaosoft/auth-types/jwt v0.0.0-20230531143726-6905d84fa794 h1:HMoYOz1
 github.com/joaosoft/auth-types/jwt v0.0.0-20230531143726-6905d84fa794/go.mod h1:MUESY8AsPPgrG7wusDrQXEhgfQzTk4pIZroUZKjxXKY=
 github.com/joaosoft/color v0.0.0-20230531140514-b61c18d53e39 h1:0v5pi77nPHjxLOEr0gL0BW5Wuu8YwIMz6wcXjFJ081Y=
 github.com/joaosoft/color v0.0.0-20230531140514-b61c18d53e39/go.mod h1:AgsP+zahQgG5NsJ9XN+lJhxq9kqXDyiOHO8zIqNxUEY=
-github.com/joaosoft/dropbox v0.0.0-20230531152810-8d9bf84db5c2 h1:/HJF/3I8/jpFbylv1DhH64tbVDrakYcaf9LtDe6E2PU=
-github.com/joaosoft/dropbox v0.0.0-20230531152810-8d9bf84db5c2/go.mod h1:9fsOrKZuxfWOZ8x8iYUcUhUZyuxRiKK1Ev8ABRprkLQ=
 github.com/joaosoft/errors v0.0.0-20210812101433-f58fbcc4c1c8/go.mod h1:88WoG5oDStLTaG0n5e8NR0rKcugZttofMwD5cajQnTA=
 github.com/joaosoft/errors v0.0.0-20230531141818-ebb38600b462 h1:FH9gGVdSVA9ERuIlyYI4+U36FZtSMulMzID37MdLfGc=
 github.com/joaosoft/errors v0.0.0-20230531141818-ebb38600b462/go.mod h1:/dazfOGZSVYLVcrKzAJATbOhYm+/9BNoS5ZDzKz+ltI=

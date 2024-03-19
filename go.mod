@@ -3,7 +3,6 @@ module github.com/joaosoft/linkedin
 go 1.20
 
 require (
-	github.com/joaosoft/dropbox v0.0.0-20230531152810-8d9bf84db5c2
 	github.com/joaosoft/logger v0.0.0-20230531142923-753c0a3e836a
 	github.com/joaosoft/manager v0.0.0-20230531145924-a549066d2284
 	github.com/joaosoft/web v0.0.0-20230531143830-cd31d8a8c35e
