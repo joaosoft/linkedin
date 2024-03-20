@@ -8,7 +8,7 @@
       "secret": "DgDeaG3Aa6RrlTd2"
     },
     "hosts": {
-      "api": "https://api.linkedin.com/v2",
+      "api": "https://api.linkedin.com/v2"
     }
   },
   "manager": {
